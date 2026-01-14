@@ -1,0 +1,29 @@
+<% layout('layouts/boilerplate')%>
+
+    <h1 class="my-3">All Recipes</h1>
+
+    <% for (let recipe of allRecipes) { %>
+
+        <div class="card mb-2">
+            <div class="row">
+                <div class="col-md-4">
+                    <% if (recipe.images[0]) { %>
+                    <img src="<%=recipe.images[0].url%>" class="card-img-top img-fluid" alt="..." crossorigin="anonymous">
+                    <% } else { %>
+                        <img src="https://res.cloudinary.com/daigovpbf/image/upload/v1734635086/YelpCamp/hh9vm4njzv20omt6otjb.jpg" class="card-img-top img-fluid" alt="..." crossorigin="anonymous">
+                    <% } %>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= recipe.title %>
+                        </h5>
+                        <p class="card-text">
+                            <%=recipe.description%>
+                        </p>
+                        <a href="/recipes/<%=recipe._id%>" class="btn btn-primary">View <%=recipe.title%></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>

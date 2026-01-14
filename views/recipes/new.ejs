@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <div class="col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title text-center">New Recipe</h2>
+                    <form action="/recipes" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title: </label>
+                            <input type="text" id="title" name="recipe[title]" class="form-control" required>
+                            <div class="valid-feedback">
+                                Looks good
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description: </label>
+                            <textarea class="form-control" placeholder="Leave a description here" id="description"
+                                name="recipe[description]" required></textarea>
+                            <div class="valid-feedback">
+                                Looks good
+                            </div>
+                        </div>
+        
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Add image(s):</label>
+                            <input class="form-control" type="file" id="image" name="image" multiple>
+                        </div>
+        
+                        <div class="mb-3">
+                            <button class="btn btn-success">Add Recipe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
